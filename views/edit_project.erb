@@ -3,6 +3,11 @@
 
   <label for="title">Rename project</label>
   <input id="title_input" name="title" type="text">
-
   <button type="submit">Update Project</button>
+</form>
+
+<form  action="/projects/<%= @project.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+
+  <button type="submit" name="delete">Delete Project</button>
 </form>

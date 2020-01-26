@@ -38,7 +38,7 @@ post('/projects/:id') do
   # redirect to "/projects/#{params[:id]}"
 
   # New approach for this method
-  @project = Project.find(params[:id].to_i)
+  @project = Project.find(params[:id].to_i())
   @project.update({:title => params[:title]})
   @projects = Project.all
   redirect to ('/projects')
