@@ -34,6 +34,11 @@ def self.find(id)
     Project.new({:title => title, :id => id})
   end
 
+  def update(attributes)
+  @title = attributes.fetch(:title)
+  DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
+end
+
 
 
 end
