@@ -65,9 +65,9 @@ post('/projects/:project_id/volunteers') do
 end
 
 get('/projects/:id/volunteers/:volunteer_id') do
-  @volunteer = Volunteer.find(params[:volunteer_id].to_i)
   @project = Project.find(params[:id].to_i)
-  erb(:volunteers)
+  @volunteer = Volunteer.find(params[:volunteer_id].to_i)
+  erb(:volunteer)
 end
 
 patch('/projects/:id/volunteers/:volunteer_id') do

@@ -1,0 +1,23 @@
+<h3>Available Volunteers</h3>
+
+<% if @volunteers.any? %>
+<ul>
+  <% @volunteers.each do |volunteer| %>
+  <li><a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are currently no volunteers to display.</p>
+<% end %>
+
+<a href="/volunteers/new">Add a new volunteer</a>
+
+<form action="/projects/:id/volunteers" method="get">
+  <input name="clear_inputs" type="hidden" value="clear">
+  <button type="submit" name="clear">Clear Volunteers</button>
+</form>
+
+<form action="/projects/:id/volunteers" method="get">
+  <input name="sort_list" type="hidden" value="search">
+  <button type="submit">Sort List</button>
+</form>
